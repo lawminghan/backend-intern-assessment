@@ -1,0 +1,4 @@
+superuser
+email: admin@gmail.com
+password: admin12345!
+role: Admin
