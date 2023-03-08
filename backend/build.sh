@@ -4,4 +4,4 @@ set -o errexit
 
 pipenv install
 
-python backend/manage.py migrate
+python manage.py migrate
