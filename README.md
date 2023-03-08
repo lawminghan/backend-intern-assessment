@@ -30,7 +30,7 @@ This application is currently hosted on Render at https://lawminghan.onrender.co
 - Request Body: `email`, `password`, `firstName`, `lastName`, `role`, `company`, `designation` fields
 - Create new user with these fields.
 
-Note: `company` and `designation` are optional.
+Note: `role` is an enum that has three values: `ADMIN`, `TECHNICIAN` and `MEMBER`. `company` and `designation` are optional.
 
 
 > api/account/user
