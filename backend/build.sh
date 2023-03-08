@@ -3,5 +3,6 @@
 set -o errexit
 
 pipenv install
+pipenv shell
 
 python manage.py migrate
