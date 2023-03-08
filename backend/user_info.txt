@@ -1,4 +1,15 @@
-superuser
-email: admin@gmail.com
-password: admin12345!
-role: Admin
+admin1
+email: admin1@gmail.com
+password: admin12345
+role: ADMIN
+
+
+technician1
+email: technician1@gmail.com
+password: technician12345
+role: TECHNICIAN
+
+member1
+email: member1@gmail.com
+password: member12345
+role: MEMBER
