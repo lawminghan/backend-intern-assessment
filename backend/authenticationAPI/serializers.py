@@ -26,8 +26,9 @@ class WaveScanUserSerializer(serializers.ModelSerializer):
         if password:
             instance.set_password(password)
 
+        
         #updates the fields if they are present in validated_data
-        instance.firstname = validated_data.get('firstName', instance.firstName)
+        instance.firstName = validated_data.get('firstName', instance.firstName)
         instance.lastName = validated_data.get('lastName', instance.lastName)
         company = validated_data.get('company', instance.company)
         if company == "":
@@ -45,4 +46,7 @@ class WaveScanUserSerializer(serializers.ModelSerializer):
         return value
 
         
-        
+class UserRoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WaveScanUser
+        fields = ['role']

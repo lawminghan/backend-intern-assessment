@@ -142,7 +142,8 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'authenticationAPI.WaveScanUser'
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKEN": True,
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_ATER_ROTATION" : False
 }

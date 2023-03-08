@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-
-
 class WaveScanUserManager(BaseUserManager):
     def create_user(self, email, role, firstName, lastName, password=None, **kwargs):
         """
@@ -91,6 +89,7 @@ class WaveScanUser(AbstractBaseUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['role', 'firstName', 'lastName']
     objects = WaveScanUserManager()
+    
     @property
     def is_staff(self):
         "Is the user a member of staff?"
@@ -107,6 +106,13 @@ class WaveScanUser(AbstractBaseUser):
         # Simplest possible answer: Yes, always
         return True
     
+    # Override save to update self.is_admin when self.role changes
+    def save(self, *args, **kwargs):
+        if self.role == self.RoleInCompany.ADMIN:
+            self.is_admin = True
+        else:
+            self.is_admin = False
+        super().save(*args, **kwargs)
     
     
     
