@@ -1,5 +1,13 @@
 # backend-intern-assessment
 
+Django was used for this RESTful API project. The dependencies installed are listed  below.
+- django
+- djangorestframework
+- djangorestframework-simplejwt
+- gunicorn
+
+This application is currently hosted on Render at https://lawminghan.onrender.com
+
 ### The available API endpoints for the assessment are listed below.
 ---
 > api/token/
