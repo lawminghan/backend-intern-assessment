@@ -5,10 +5,14 @@ Django was used for this RESTful API project. The dependencies installed are lis
 - djangorestframework
 - djangorestframework-simplejwt
 - gunicorn
+- whitenoise
 
-This application is currently hosted on Render at https://lawminghan.onrender.com
+This application is currently hosted on Render at https://lawminghan.onrender.com.
 
 ### The available API endpoints for the assessment are listed below.
+
+I've collated a list of endpoints at https://lawminghan.onrender.com/api for your reference.
+
 ---
 > api/token/
 - HTTP Method: POST
