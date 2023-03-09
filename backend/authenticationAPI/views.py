@@ -1,4 +1,5 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,6 +9,21 @@ from .serializers import WaveScanUserSerializer, UserRoleSerializer
 
 
 # Create your views here.
+def index(request):
+    
+    availableURLs = {
+        'admin' : request.scheme + "://" + request.get_host()+'/admin/',
+        'token_obtain_pair' : request.build_absolute_uri(location=reverse('token_obtain_pair')),
+        'token_refresh' : request.build_absolute_uri(location=reverse('token_refresh')),
+        'registrationView' : request.build_absolute_uri(location=reverse('registrationView')),
+        'singleUserView' : request.build_absolute_uri(location=reverse('singleUserView')),
+        'listUsersView' : request.build_absolute_uri(location=reverse('listUsersView')),
+        'manageUsersView' : request.build_absolute_uri(location=reverse('listUsersView') +'/15'),
+    }
+    return render(request, 'authenticationAPI/index.html', context={'availableURLs': availableURLs})
+
+
+
 class Registration(APIView):
     def post(self, request):
         serialized_user = WaveScanUserSerializer(data=request.data)
